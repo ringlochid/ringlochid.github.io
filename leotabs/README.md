@@ -15,6 +15,6 @@ This is a ready-to-serve static website. Preview it with any local static web se
 
 The site is published under `leotabs/` in the domain's `ringlochid.github.io` repository to retain the address above. That repository runs the GitHub Pages deployment. Website updates must be copied there after they have been reviewed here. Keep the domain's other pages and configuration unchanged.
 
-The library screenshot shows the real extension with sample data. Source files carry the MPL-2.0 license; see [LICENSE.txt](LICENSE.txt).
+The library and switcher screenshots are original captures approved by the developer for this site. Source files carry the MPL-2.0 license; see [LICENSE.txt](LICENSE.txt).
 
 Questions and security reports: [support@ringlochid.me](mailto:support@ringlochid.me).
