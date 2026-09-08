@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="description" content="LeoTabs keeps your browsing work in local collections. Save, organise and switch tabs, with optional AI and portable exports.">
+<link rel="canonical" href="https://ringlochid.me/leotabs/docs/import-export/">
+<title>Backup, import and export · LeoTabs</title>
+<link rel="icon" href="../../assets/lion.svg" type="image/svg+xml"><script src="../../assets/theme.js"></script><link rel="stylesheet" href="../../assets/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="../../"><img src="../../assets/lion.svg" alt="" width="28" height="28">LeoTabs</a><nav aria-label="Main"><a href="../../docs/" aria-current="page">Guide</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav><label class="theme-control" hidden><span>Theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../../docs/">← All guides</a></nav><h1 id="backup-import-and-export">Backup, import and export</h1>
+<p>A backup is the best way to carry your library to another installation. Markdown and bookmark HTML are useful when you want your links outside LeoTabs.</p>
+<details class="on-this-page"><summary>On this page</summary><nav aria-label="On this page"><ul><li><a href="#choose-an-export">Choose an export</a></li><li><a href="#back-up-the-whole-library">Back up the whole library</a></li><li><a href="#export-one-collection">Export one collection</a></li><li><a href="#import-saved-work">Import saved work</a></li><li><a href="#moving-to-another-browser-or-the-store-version">Moving to another browser or the store version</a></li><li><a href="#protect-exported-files">Protect exported files</a></li></ul></nav></details><h2 id="choose-an-export">Choose an export</h2>
+<div class="guide-table"><table><thead><tr><th scope="col">Format</th><th scope="col">Use it for</th><th scope="col">What it contains</th></tr></thead><tbody>
+<tr><td>Backup JSON</td><td>Restore or move a library</td><td>Spaces, collections, groups, notes, allowed preferences and recent action-reference log</td></tr>
+<tr><td>Collection JSON</td><td>Share or copy selected saved collections</td><td>Collection structure and links</td></tr>
+<tr><td>Bookmark HTML</td><td>Import links into a browser or bookmark tool</td><td>Folder/link structure suitable for bookmark import</td></tr>
+<tr><td>Markdown</td><td>Readable notes and links in another app</td><td>Collection/group headings, links and notes</td></tr>
+<tr><td>Copy Markdown</td><td>Paste one collection into another app</td><td>The collection&#39;s Markdown content on the clipboard</td></tr>
+<tr><td>Browser bookmarks</td><td>Create bookmarks directly in your browser</td><td>A new destination folder and collection groups/links</td></tr>
+<tr><td>Notion</td><td>Create remote snapshot pages</td><td>See the <a href="../../docs/notion/">Notion guide</a></td></tr>
+</tbody></table></div>
+<p>A backup does <strong>not</strong> contain API keys, screenshots, browser history, live browser session IDs or full older recovery snapshots. The exported action log is informational; importing it does not replay old browser actions.</p>
+<h2 id="back-up-the-whole-library">Back up the whole library</h2>
+<ol>
+<li>Open <strong>Settings → Export &amp; import</strong>.</li>
+<li>Choose <strong>Backup JSON</strong>.</li>
+<li>Keep the downloaded <code>backup.json</code> somewhere you control. Rename it with a date if you keep several copies.</li>
+<li>Before an important migration, check that the file downloaded successfully and keep the original installation until you have verified the import.</li>
+</ol>
+<p>Whole-library HTML and Markdown downloads use names such as <code>bookmarks.html</code> and <code>collections.md</code>. A collection&#39;s own export menu uses its name for individual files.</p>
+<h2 id="export-one-collection">Export one collection</h2>
+<p>Open its <strong>••• → Export</strong> menu and choose a file format or Copy Markdown. Browser bookmark export requests bookmark access, lets you choose a destination folder and creates new bookmarks. It does not replace your existing bookmark tree. Browser sync may separately sync those bookmarks.</p>
+<h2 id="import-saved-work">Import saved work</h2>
+<ol>
+<li>Choose <strong>Import</strong> or the import option under Export &amp; import.</li>
+<li>Select your file or the supported text input.</li>
+<li>Review the number of collections/links and any skipped items.</li>
+<li>If the backup offers preferences, decide whether to restore them.</li>
+<li>Confirm the import, then inspect the new collections.</li>
+</ol>
+<p>Imports create separate copies; importing the same file again can create duplicates. Import is not a destructive “replace everything” restore.</p>
+<p>Supported inputs include LeoTabs backup/collection JSON (including compatible older Neo-format files), supported Toby collections/cards JSON, bookmark HTML, Markdown links and OneTab text. Arbitrary JSON files or every historical third-party format are not guaranteed to import. Unsupported URLs/items may be skipped or reported.</p>
+<p>API keys and website permissions are not transferred. Reconnect integrations on the destination. Automatic preview capture stays off when importing preferences until you enable it in Settings.</p>
+<h2 id="moving-to-another-browser-or-the-store-version">Moving to another browser or the store version</h2>
+<p>Export in the original installation, install LeoTabs in the destination, then import. Verify spaces, collection counts and several links before removing the original. Local data is tied to the browser profile and extension identity; the store version can have a different identity from an unpacked build.</p>
+<h2 id="protect-exported-files">Protect exported files</h2>
+<p>Exports are not encrypted by LeoTabs. Full URLs, local file paths, titles and notes can contain sensitive information. Review a file before sharing it. Downloaded files and clipboard copies remain outside LeoTabs&#39;s control; uninstalling does not delete them.</p>
+<p>See <a href="../../docs/recovery/">Recovery</a> if the original library is still available but a recent operation went wrong.</p><nav class="guide-next" aria-label="Related guides"><a href="../../docs/">All guides</a><a href="../../docs/ai/">AI setup</a><a href="../../docs/notion/">Notion setup</a><a href="../../docs/troubleshooting/">Troubleshooting</a></nav></main>
+<footer class="site-foot"><span>Made by Leo · A little more room to think.</span><nav aria-label="Footer"><a href="../../privacy/">Privacy</a><a href="../../permissions/">Permissions</a><a href="../../changelog/">Changelog</a><a href="../../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>

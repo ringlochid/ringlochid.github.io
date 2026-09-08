@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="description" content="LeoTabs keeps your browsing work in local collections. Save, organise and switch tabs, with optional AI and portable exports.">
+<link rel="canonical" href="https://ringlochid.me/leotabs/permissions/">
+<title>Permissions · LeoTabs</title>
+<link rel="icon" href="../assets/lion.svg" type="image/svg+xml"><script src="../assets/theme.js"></script><link rel="stylesheet" href="../assets/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="../"><img src="../assets/lion.svg" alt="" width="28" height="28">LeoTabs</a><nav aria-label="Main"><a href="../docs/">Guide</a><a href="../privacy/">Privacy</a><a href="../support/">Support</a></nav><label class="theme-control" hidden><span>Theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../docs/">← All guides</a></nav><h1 id="permissions-explained">Permissions explained</h1>
+<p>LeoTabs asks for browser access to provide tab management, saving, search and recovery. It does not require access to every website at installation. You can use core features without enabling AI, Notion, history search or automatic previews.</p>
+<h2 id="core-permissions">Core permissions</h2>
+<div class="guide-table"><table><thead><tr><th scope="col">Permission</th><th scope="col">Why LeoTabs uses it</th></tr></thead><tbody>
+<tr><td>tabs</td><td>Read titles/URLs to list, search, save and switch tabs</td></tr>
+<tr><td>tabGroups</td><td>Read, create and change browser groups</td></tr>
+<tr><td>storage</td><td>Save preferences, connection keys and temporary state</td></tr>
+<tr><td>unlimitedStorage</td><td>Keep the local library, recovery records and bounded image caches</td></tr>
+<tr><td>activeTab</td><td>Temporary current-page access after a user action, including a switcher preview</td></tr>
+<tr><td>scripting</td><td>Display the bundled switcher on the current page</td></tr>
+<tr><td>sessions</td><td>Find and restore recently closed browser sessions</td></tr>
+<tr><td>alarms</td><td>Schedule local recovery checkpoints</td></tr>
+<tr><td>favicon</td><td>Display website icons through the browser&#39;s favicon service</td></tr>
+</tbody></table></div>
+<p>These permissions do not mean the developer receives your tabs. Optional external connections are described below and in the <a href="../privacy/">privacy policy</a>.</p>
+<h2 id="optional-access">Optional access</h2>
+<p><strong>History:</strong> explicitly enable it for browser-history search. Queries return up to 40 results from the previous 30 days.</p>
+<p><strong>Bookmarks:</strong> granted for direct bookmark export. LeoTabs reads folders to offer a destination and creates new bookmarks for the collection you export.</p>
+<p><strong>AI provider websites:</strong> granted when configuring/using AI. LeoTabs sends requests directly to the selected provider&#39;s API. Compatible endpoints can be your own HTTPS server or a loopback service on the same computer.</p>
+<p><strong>Notion:</strong> granted for requests to <code>api.notion.com</code> when configuring/exporting.</p>
+<p><strong>All websites:</strong> optional automatic previews need access to capture active web pages as you browse. The manifest&#39;s optional all-URLs declaration also permits user-chosen compatible API endpoints; it is a ceiling for permissions you may grant, not automatic access to everything.</p>
+<h2 id="refuse-or-revoke-access">Refuse or revoke access</h2>
+<p>Declining optional access leaves that feature unavailable. Core tab management remains usable.</p>
+<p>Go to <strong>Settings → Privacy &amp; permissions → Revoke access</strong> to remove optional website, history and bookmark permissions. Automatic previews also turn off. This does not erase old caches or exports; use Clear previews or manage exported copies separately.</p>
+<p>To stop a connection entirely, forget its local key/token and revoke it at the provider if appropriate. See <a href="../docs/ai/">AI</a>, <a href="../docs/notion/">Notion</a>, and <a href="../docs/settings-privacy/">Settings and privacy</a>.</p><nav class="guide-next" aria-label="Related guides"><a href="../docs/">All guides</a><a href="../docs/ai/">AI setup</a><a href="../docs/notion/">Notion setup</a><a href="../docs/troubleshooting/">Troubleshooting</a></nav></main>
+<footer class="site-foot"><span>Made by Leo · A little more room to think.</span><nav aria-label="Footer"><a href="../privacy/">Privacy</a><a href="../permissions/">Permissions</a><a href="../changelog/">Changelog</a><a href="../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>

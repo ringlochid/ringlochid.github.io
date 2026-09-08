@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="description" content="LeoTabs keeps your browsing work in local collections. Save, organise and switch tabs, with optional AI and portable exports.">
+<link rel="canonical" href="https://ringlochid.me/leotabs/docs/ai/">
+<title>AI setup and use · LeoTabs</title>
+<link rel="icon" href="../../assets/lion.svg" type="image/svg+xml"><script src="../../assets/theme.js"></script><link rel="stylesheet" href="../../assets/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="../../"><img src="../../assets/lion.svg" alt="" width="28" height="28">LeoTabs</a><nav aria-label="Main"><a href="../../docs/" aria-current="page">Guide</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav><label class="theme-control" hidden><span>Theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../../docs/">← All guides</a></nav><h1 id="ai-setup-and-use">AI setup and use</h1>
+<p>AI is optional. Saving, switching, searching, notes, website grouping and file exports work without an AI connection.</p>
+<p>An AI connection uses <strong>your provider account and API access</strong>. A subscription to a provider&#39;s chat website is not the same thing as an API key or API credit. Confirm billing and model access with that provider before use.</p>
+<details class="on-this-page"><summary>On this page</summary><nav aria-label="On this page"><ul><li><a href="#what-ai-does">What AI does</a></li><li><a href="#connect-a-provider">Connect a provider</a></li><li><a href="#provider-setup-references">Provider setup references</a></li><li><a href="#custom-or-local-endpoints">Custom or local endpoints</a></li><li><a href="#exactly-what-leaves-your-browser">Exactly what leaves your browser</a></li><li><a href="#limits-cancellation-and-undo">Limits, cancellation and Undo</a></li><li><a href="#troubleshoot-a-connection">Troubleshoot a connection</a></li></ul></nav></details><h2 id="what-ai-does">What AI does</h2>
+<div class="guide-table"><table><thead><tr><th scope="col">Feature</th><th scope="col">How to use it</th><th scope="col">What changes</th></tr></thead><tbody>
+<tr><td>Automatic naming</td><td>Save a new collection after configuring a saved key and provider access</td><td>A short descriptive name may replace the generated save name</td></tr>
+<tr><td>Group open tabs by topic</td><td>Choose the AI topic-grouping action for open tabs</td><td>Related tabs form groups across websites</td></tr>
+<tr><td>Organise collection with AI</td><td>Collection menu → Organise collection with AI</td><td>Collection name, overview note and topic groups</td></tr>
+<tr><td>Filing suggestions</td><td>After a drag-created collection, choose Suggest name or destination, then Ask AI</td><td>Suggestions for a name or an existing destination; choose one to apply</td></tr>
+</tbody></table></div>
+<p>Website grouping is local and does not use AI. Current AI tools infer from link metadata: they do not read the full article/page body. The collection overview is a summary of that metadata, not verified research.</p>
+<h2 id="connect-a-provider">Connect a provider</h2>
+<ol>
+<li>Open the library and choose <strong>Settings → AI connection</strong>.</li>
+<li>Select OpenAI, Claude (Anthropic), Gemini (Google), DeepSeek, or Other / OpenAI-compatible.</li>
+<li>Create an API key in that provider&#39;s own account portal. Set spending limits or quota there if available. Never use a key supplied by an unknown person.</li>
+<li>Enter a model identifier available to your API account. The prefilled model is a convenience, not a guarantee of account access or ongoing availability.</li>
+<li>Paste the API key into its password field. Read the disclosure about automatic naming, transmitted information, storage and charges.</li>
+<li>Choose <strong>Save settings</strong>, then approve access to the displayed provider origin if you want that connection.</li>
+<li>Try an AI action on a small collection of harmless sample links. Saving settings stores the connection; it is not a live credential test.</li>
+</ol>
+<p>Keys are saved separately for each provider, and for each complete custom endpoint. Changing providers does not intentionally send the old provider&#39;s key to the new one. A blank key field keeps an existing saved key; use <strong>Forget AI key</strong> to remove it.</p>
+<h2 id="provider-setup-references">Provider setup references</h2>
+<p>Use these official instructions to create credentials and choose an available model:</p>
+<ul>
+<li><a href="https://developers.openai.com/api/docs/quickstart">OpenAI API quickstart</a>.</li>
+<li><a href="https://platform.claude.com/docs/en/api/overview">Anthropic API overview</a>.</li>
+<li><a href="https://ai.google.dev/gemini-api/docs/api-key">Google Gemini API keys</a>.</li>
+<li><a href="https://api-docs.deepseek.com/">DeepSeek API quickstart</a>.</li>
+</ul>
+<p>The standard provider choices use their built-in API addresses. You do not need to edit an endpoint for those choices.</p>
+<h2 id="custom-or-local-endpoints">Custom or local endpoints</h2>
+<p>Choose <strong>Other / OpenAI-compatible</strong> and enter the complete chat-completions URL, not only a server hostname. The service must understand the OpenAI-style messages and JSON response format used by LeoTabs.</p>
+<p>For example, a local server that exposes that route might use <code>http://127.0.0.1:1234/v1/chat/completions</code>. This is an example, not a server installed by LeoTabs. Enter the actual model name loaded by your server. Leave the key blank only if that service does not require one.</p>
+<p>Remote endpoints must use HTTPS. HTTP is accepted only for loopback hosts on your own computer. URLs containing embedded usernames/passwords, a query string or a fragment are rejected. A proxy or remote endpoint operator receives the information sent to it. Different “compatible” servers support different fields, so compatibility must be tested.</p>
+<p>Automatic naming currently requires a saved key; a keyless local connection can be used for explicit compatible AI actions but does not activate automatic naming.</p>
+<h2 id="exactly-what-leaves-your-browser">Exactly what leaves your browser</h2>
+<p>Topic grouping sends the chosen tab titles, full URLs and identifiers. Collection organisation sends its name and note plus link titles, full URLs, link notes and grouping identifiers. Links excluded from regrouping can still be included as context.</p>
+<p>Automatic naming sends titles and URLs of the newly saved collection. <strong>It can happen on each eligible save without a separate confirmation once a key and access are configured.</strong></p>
+<p>Filing suggestions can include the selected links and names, notes and sample URLs from other collections across all spaces. Do not use that feature if you do not want the broader library context sent.</p>
+<p>Screenshots, page-body text and browser-history search results are not sent by these AI tools. Sensitive information can still appear in URLs, titles or notes. Requests go directly to your configured provider, which applies its own retention, processing and billing rules. See the <a href="../../privacy/">privacy policy</a>.</p>
+<h2 id="limits-cancellation-and-undo">Limits, cancellation and Undo</h2>
+<p>Collection organisation accepts 1–300 links. Topic groups need at least two related items; isolated items may stay ungrouped. Grouping is not a promise to reorder every link or rename every tab.</p>
+<p>If the provider returns malformed collection output, LeoTabs may send one correction request with the same metadata. That additional request can incur provider usage. Organisation normally applies directly and offers Undo. If the collection or live tabs change during the request, the result can be rejected instead of applying stale changes.</p>
+<p>Cancel stops a pending request locally where supported. Cancel and Undo cannot retract information already delivered to a provider or reverse its charges.</p>
+<h2 id="troubleshoot-a-connection">Troubleshoot a connection</h2>
+<div class="guide-table"><table><thead><tr><th scope="col">Symptom</th><th scope="col">Check</th></tr></thead><tbody>
+<tr><td>Add your API key / access not enabled</td><td>Correct provider selected, key saved, origin permission granted</td></tr>
+<tr><td>HTTP 401 or 403</td><td>Key validity, account/project permissions and available model</td></tr>
+<tr><td>HTTP 404 or model not found</td><td>Exact model identifier and full custom endpoint route</td></tr>
+<tr><td>HTTP 429</td><td>Provider quota, billing limit or temporary rate limit; wait before retrying</td></tr>
+<tr><td>Timeout / network failure</td><td>Provider availability, firewall/VPN and local server running if applicable</td></tr>
+<tr><td>Invalid JSON / unknown link</td><td>Try again on a smaller, unchanged collection; try a model with reliable JSON output</td></tr>
+<tr><td>Collection changed while AI was working</td><td>Finish edits or dragging, then run the action again</td></tr>
+<tr><td>No automatic name</td><td>Saved key and access required, 1–300 links, and no intervening manual name/content change</td></tr>
+</tbody></table></div>
+<p>If you suspect a key was exposed, revoke it at the provider. <strong>Forget AI key</strong> removes the local saved copy for the selected connection. <strong>Privacy &amp; permissions → Revoke access</strong> removes optional website access. To clear several saved providers, visit and forget each one. For further help, send the error and provider/model names to support, never the key.</p><nav class="guide-next" aria-label="Related guides"><a href="../../docs/">All guides</a><a href="../../docs/ai/">AI setup</a><a href="../../docs/notion/">Notion setup</a><a href="../../docs/troubleshooting/">Troubleshooting</a></nav></main>
+<footer class="site-foot"><span>Made by Leo · A little more room to think.</span><nav aria-label="Footer"><a href="../../privacy/">Privacy</a><a href="../../permissions/">Permissions</a><a href="../../changelog/">Changelog</a><a href="../../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>

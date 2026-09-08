@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="description" content="LeoTabs keeps your browsing work in local collections. Save, organise and switch tabs, with optional AI and portable exports.">
+<link rel="canonical" href="https://ringlochid.me/leotabs/docs/notion/">
+<title>Send collections to Notion · LeoTabs</title>
+<link rel="icon" href="../../assets/lion.svg" type="image/svg+xml"><script src="../../assets/theme.js"></script><link rel="stylesheet" href="../../assets/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="../../"><img src="../../assets/lion.svg" alt="" width="28" height="28">LeoTabs</a><nav aria-label="Main"><a href="../../docs/" aria-current="page">Guide</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav><label class="theme-control" hidden><span>Theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../../docs/">← All guides</a></nav><h1 id="send-collections-to-notion">Send collections to Notion</h1>
+<p>LeoTabs exports a <strong>snapshot</strong> into Notion. It creates pages containing your collection names, saved links, groups and notes. It is not two-way sync: editing either side does not update the other, and there is no Notion-to-LeoTabs sync/import connection.</p>
+<p>You can export one collection or the entire library. For local files instead, see <a href="../../docs/import-export/">Backup, import and export</a>.</p>
+<details class="on-this-page"><summary>On this page</summary><nav aria-label="On this page"><ul><li><a href="#before-you-connect">Before you connect</a></li><li><a href="#1-create-an-internal-connection">1. Create an internal connection</a></li><li><a href="#2-give-the-connection-a-destination">2. Give the connection a destination</a></li><li><a href="#3-find-the-page-id">3. Find the page ID</a></li><li><a href="#4-save-the-connection-in-leotabs">4. Save the connection in LeoTabs</a></li><li><a href="#export-one-collection">Export one collection</a></li><li><a href="#export-the-whole-library">Export the whole library</a></li><li><a href="#pause-continue-and-avoid-duplicates">Pause, continue and avoid duplicates</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#disconnect-and-privacy">Disconnect and privacy</a></li></ul></nav></details><h2 id="before-you-connect">Before you connect</h2>
+<p>You need a Notion workspace, a destination page and an internal Notion connection token. LeoTabs calls this an <strong>internal integration</strong> in its settings; current Notion documentation also calls it an <strong>internal connection</strong>.</p>
+<p>Use a dedicated parent page such as “LeoTabs exports” so you can control who sees the exported work. Access to that page can expose its child export pages too. This is a direct connection to your account, not a LeoTabs-hosted service.</p>
+<h2 id="1-create-an-internal-connection">1. Create an internal connection</h2>
+<ol>
+<li>Open Notion&#39;s Developer portal from the <a href="https://developers.notion.com/guides/get-started/authorization">official authorization guide</a>.</li>
+<li>Create an internal connection in the intended workspace. Notion currently requires a workspace owner for this; ask your workspace owner if the option is unavailable.</li>
+<li>Give it a recognisable name, such as LeoTabs exports, and enable the content capability needed to create pages and append blocks: <strong>Insert content</strong>.</li>
+<li>Copy its installation access token from the connection&#39;s configuration. Keep it private; do not paste it into a page, issue, screenshot or repository.</li>
+</ol>
+<p>LeoTabs exports content without reading workspace users or comments. It does not need user-email or comment capabilities. Notion&#39;s <a href="https://developers.notion.com/reference/capabilities">capability reference</a> explains the access options. Workspace restrictions can also affect availability.</p>
+<p>Use this internal-connection flow for LeoTabs. Notion&#39;s newer personal-token tutorials describe a different, broader user-scoped credential and are not required for this setup.</p>
+<h2 id="2-give-the-connection-a-destination">2. Give the connection a destination</h2>
+<ol>
+<li>Open the parent page in the same Notion workspace.</li>
+<li>Open its <strong>•••</strong> menu, choose <strong>Add connections</strong>, and select the connection you created.</li>
+<li>Confirm the connection now has access to the parent.</li>
+</ol>
+<p>A page being visible to you, or shared with your email address, does not automatically grant an internal connection access. You do not need to publish the page to the web.</p>
+<h2 id="3-find-the-page-id">3. Find the page ID</h2>
+<p>Copy the parent page&#39;s link. Its page ID is the 32 hexadecimal characters at the end of the page path, sometimes displayed with hyphens. Do not paste the whole URL into LeoTabs&#39;s <strong>Notion parent page ID</strong> field.</p>
+<p>For this made-up link:</p>
+<pre><code>https://www.notion.so/LeoTabs-exports-0123456789abcdef0123456789abcdef</code></pre>
+<p>The example page ID is <code>0123456789abcdef0123456789abcdef</code>. Use your actual parent page&#39;s ID, not this example. Ignore URL query parameters such as a view identifier. Choose a regular page as the parent; the exporter creates child pages, not rows in a Notion database/data source.</p>
+<h2 id="4-save-the-connection-in-leotabs">4. Save the connection in LeoTabs</h2>
+<ol>
+<li>Open <strong>Settings → Notion</strong>.</li>
+<li>Paste the token into <strong>Notion integration token</strong>.</li>
+<li>Paste the parent page ID into <strong>Notion parent page ID</strong>.</li>
+<li>Choose <strong>Save settings</strong> and allow access to <code>https://api.notion.com</code> when requested.</li>
+</ol>
+<p>Saving settings does not verify the token or page access. First test with a small collection containing harmless sample links.</p>
+<h2 id="export-one-collection">Export one collection</h2>
+<p>Open the collection&#39;s menu, choose <strong>Export → Send to Notion…</strong>, review the destination page ID and choose <strong>Create Notion page</strong>.</p>
+<p>The result is a new child page named after the collection. Groups become headings; links become bookmark blocks with title captions; collection/link notes become text. This saves links and notes, not full articles or screenshot previews.</p>
+<p>Only HTTP(S) links are accepted for this export, and URLs must be no longer than 2,000 characters. For a collection containing file links or unsupported URLs, use Markdown or backup JSON instead.</p>
+<h2 id="export-the-whole-library">Export the whole library</h2>
+<p>Choose <strong>Settings → Export &amp; import → Send to Notion…</strong>. Review the number of pages and destination, then choose <strong>Create Notion pages</strong>.</p>
+<p>Every collection across all spaces is included, one new page per collection. Pages go under the chosen parent; LeoTabs does not recreate spaces as another hierarchy of parent pages. This is a whole-library export, not just the currently visible space.</p>
+<h2 id="pause-continue-and-avoid-duplicates">Pause, continue and avoid duplicates</h2>
+<p>Large exports send content in batches. <strong>Pause</strong> stops between batches; a request already sent may still finish. Open <strong>Recovery</strong> and continue the same export to use its recorded progress. Pages already marked complete are not sent again by that job.</p>
+<p>Starting a brand-new export creates new pages, even if you exported the same collection before. It does not find and update an earlier export.</p>
+<p>If LeoTabs says the result is <strong>uncertain</strong> or the response was lost, check Notion first. The batch may already exist, so LeoTabs will not blindly resend it. Compare the destination with your collection and only start another export after you understand which content would be duplicated. Local Undo cannot delete Notion pages; remove unwanted remote pages in Notion.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="guide-table"><table><thead><tr><th scope="col">Problem</th><th scope="col">What to do</th></tr></thead><tbody>
+<tr><td>Invalid destination page ID</td><td>Paste only a 32-character hexadecimal ID, with or without hyphens; check you selected a page</td></tr>
+<tr><td>HTTP 401</td><td>Verify the token, workspace and whether the token was revoked</td></tr>
+<tr><td>HTTP 403</td><td>Check Insert content capability and workspace restrictions</td></tr>
+<tr><td>HTTP 404 / destination inaccessible</td><td>Add the connection to that exact parent page; check workspace and page ID</td></tr>
+<tr><td>HTTP 400 / unsupported URL</td><td>Check the parent type and link limits; try a small collection or file export</td></tr>
+<tr><td>Notion is busy / HTTP 429</td><td>Wait and continue the same job from Recovery; avoid starting duplicate jobs</td></tr>
+<tr><td>Uncertain / timeout / incomplete response</td><td>Inspect Notion before retrying; remote writes may have succeeded</td></tr>
+<tr><td>Only some pages are present</td><td>Review Recovery status and continue the existing export when offered</td></tr>
+<tr><td>New pages duplicate earlier pages</td><td>A new export is a new snapshot; use the existing job only for resuming</td></tr>
+</tbody></table></div>
+<h2 id="disconnect-and-privacy">Disconnect and privacy</h2>
+<p>Use <strong>Settings → Notion → Forget Notion token</strong> to delete the saved token. Revoke the connection/token in Notion if it should no longer have access, and remove its connection from the parent as needed. LeoTabs&#39;s <strong>Privacy &amp; permissions → Revoke access</strong> removes optional browser access.</p>
+<p>The token stays in browser-local storage without LeoTabs-managed encryption and is excluded from backup files. Exported content travels directly to Notion; people with destination access may see it. Disconnecting, clearing local data or uninstalling does not delete pages already exported. See the <a href="../../privacy/">privacy policy</a>.</p><nav class="guide-next" aria-label="Related guides"><a href="../../docs/">All guides</a><a href="../../docs/ai/">AI setup</a><a href="../../docs/notion/">Notion setup</a><a href="../../docs/troubleshooting/">Troubleshooting</a></nav></main>
+<footer class="site-foot"><span>Made by Leo · A little more room to think.</span><nav aria-label="Footer"><a href="../../privacy/">Privacy</a><a href="../../permissions/">Permissions</a><a href="../../changelog/">Changelog</a><a href="../../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>

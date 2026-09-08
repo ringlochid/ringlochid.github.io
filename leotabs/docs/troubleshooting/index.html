@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="description" content="LeoTabs keeps your browsing work in local collections. Save, organise and switch tabs, with optional AI and portable exports.">
+<link rel="canonical" href="https://ringlochid.me/leotabs/docs/troubleshooting/">
+<title>Troubleshooting · LeoTabs</title>
+<link rel="icon" href="../../assets/lion.svg" type="image/svg+xml"><script src="../../assets/theme.js"></script><link rel="stylesheet" href="../../assets/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="../../"><img src="../../assets/lion.svg" alt="" width="28" height="28">LeoTabs</a><nav aria-label="Main"><a href="../../docs/" aria-current="page">Guide</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav><label class="theme-control" hidden><span>Theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../../docs/">← All guides</a></nav><h1 id="troubleshooting">Troubleshooting</h1>
+<p>Start with the smallest affected action and keep a backup before reinstalling, importing repeatedly or changing stored work.</p>
+<details class="on-this-page"><summary>On this page</summary><nav aria-label="On this page"><ul><li><a href="#the-shortcut-does-not-work">The shortcut does not work</a></li><li><a href="#the-library-looks-empty">The library looks empty</a></li><li><a href="#a-collection-changes-when-i-browse">A collection changes when I browse</a></li><li><a href="#grouping-did-not-do-what-i-expected">Grouping did not do what I expected</a></li><li><a href="#dragging-does-not-change-the-order">Dragging does not change the order</a></li><li><a href="#a-preview-is-missing-or-stale">A preview is missing or stale</a></li><li><a href="#ai-or-notion-fails">AI or Notion fails</a></li><li><a href="#import-is-rejected-or-duplicates-appear">Import is rejected or duplicates appear</a></li><li><a href="#tabs-closed-unexpectedly">Tabs closed unexpectedly</a></li><li><a href="#report-an-issue-safely">Report an issue safely</a></li></ul></nav></details><h2 id="the-shortcut-does-not-work">The shortcut does not work</h2>
+<p>Open the browser&#39;s extension shortcut settings and check whether the binding is assigned. Another extension or the operating system may own it. Try the toolbar button and a normal HTTPS page. Protected pages use a separate extension window rather than an overlay.</p>
+<p>Default shortcuts are Alt+Q, Alt+Shift+Q and Alt+Shift+K. <a href="../../docs/search-shortcuts/">Shortcut guide</a>.</p>
+<h2 id="the-library-looks-empty">The library looks empty</h2>
+<p>Check the selected space, search query and collection scope. Folded collections and preview limits can hide links; use the chevron or Show more. Confirm you are in the same browser profile and installation as before.</p>
+<p>An unpacked build and a store installation can have different IDs and local libraries. Do not uninstall the old one until you have exported and verified a backup. <a href="../../docs/import-export/">Migration guide</a>.</p>
+<h2 id="a-collection-changes-when-i-browse">A collection changes when I browse</h2>
+<p>Check its Auto-update switch and <strong>Settings → Auto-update all collections</strong>. Pause updating to keep the saved list fixed. Auto-group new tabs is a separate control for live browser grouping.</p>
+<h2 id="grouping-did-not-do-what-i-expected">Grouping did not do what I expected</h2>
+<p>Website grouping is local and groups by site. AI topic grouping groups by shared purpose across sites. Check whether existing groups were included and whether a selection limited the action. Isolated links can remain ungrouped.</p>
+<p>AI collection organisation updates its name, overview and groups; it does not promise to reorder all links. <a href="../../docs/groups-selection/">Groups</a> · <a href="../../docs/ai/">AI</a>.</p>
+<h2 id="dragging-does-not-change-the-order">Dragging does not change the order</h2>
+<p>Drag the space name or collection header and wait for the insertion bar at a new position before dropping. Dropping back in the same slot changes nothing. Space menus also offer Move left/Move right. Reload an updated unpacked extension and refresh its pages if the UI is from an older version.</p>
+<p>If the problem persists, report the source/target positions and whether it survives a page refresh. Use sample names in screenshots.</p>
+<h2 id="a-preview-is-missing-or-stale">A preview is missing or stale</h2>
+<p>A page must have an eligible active-page capture; LeoTabs does not load background pages merely to create previews. Private or protected pages may not be captured. Try Clear previews and reopen the visual switcher on a normal page. Automatic previews need their optional access.</p>
+<p>Turning off automatic previews does not disable capture when you explicitly open the visual switcher. <a href="../../docs/settings-privacy/">Preview controls</a>.</p>
+<h2 id="ai-or-notion-fails">AI or Notion fails</h2>
+<p>Use the dedicated <a href="../../docs/ai/">AI troubleshooting table</a> or <a href="../../docs/notion/">Notion troubleshooting table</a>. Verify account access, credentials, destination/model and permissions. Do not paste a key into an error report.</p>
+<p>An uncertain Notion response may have created remote content. Inspect the destination before starting another export.</p>
+<h2 id="import-is-rejected-or-duplicates-appear">Import is rejected or duplicates appear</h2>
+<p>Check the format, use a supported export, and read the import preview. Imports add copies; they do not replace the whole library. Keep the source file and avoid repeated imports while investigating. <a href="../../docs/import-export/">Import/export guide</a>.</p>
+<h2 id="tabs-closed-unexpectedly">Tabs closed unexpectedly</h2>
+<p>Check Undo, Timeline and Recovery. Avoid further changes while you inspect the recorded operation. Recovery can reopen URLs and groups but cannot restore unsaved form contents. <a href="../../docs/recovery/">Recovery guide</a>.</p>
+<h2 id="report-an-issue-safely">Report an issue safely</h2>
+<p>Email <a href="mailto:support@ringlochid.me">support@ringlochid.me</a> with the LeoTabs version, browser/OS version, expected result and reproduction steps. A short example with harmless pages is more useful than a complete personal library.</p>
+<p>Review screenshots and logs for URLs, email addresses, credentials and private notes. Report security issues privately with the subject “LeoTabs security report”.</p><nav class="guide-next" aria-label="Related guides"><a href="../../docs/">All guides</a><a href="../../docs/ai/">AI setup</a><a href="../../docs/notion/">Notion setup</a><a href="../../docs/troubleshooting/">Troubleshooting</a></nav></main>
+<footer class="site-foot"><span>Made by Leo · A little more room to think.</span><nav aria-label="Footer"><a href="../../privacy/">Privacy</a><a href="../../permissions/">Permissions</a><a href="../../changelog/">Changelog</a><a href="../../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>

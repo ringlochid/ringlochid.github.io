@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="description" content="LeoTabs keeps your browsing work in local collections. Save, organise and switch tabs, with optional AI and portable exports.">
+<link rel="canonical" href="https://ringlochid.me/leotabs/docs/recovery/">
+<title>Undo, Timeline and recovery · LeoTabs</title>
+<link rel="icon" href="../../assets/lion.svg" type="image/svg+xml"><script src="../../assets/theme.js"></script><link rel="stylesheet" href="../../assets/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="../../"><img src="../../assets/lion.svg" alt="" width="28" height="28">LeoTabs</a><nav aria-label="Main"><a href="../../docs/" aria-current="page">Guide</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav><label class="theme-control" hidden><span>Theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../../docs/">← All guides</a></nav><h1 id="undo-timeline-and-recovery">Undo, Timeline and recovery</h1>
+<p>LeoTabs stores recovery information around supported edits and tab operations. It helps restore saved structure and URLs; it cannot recreate everything happening inside a web page.</p>
+<details class="on-this-page"><summary>On this page</summary><nav aria-label="On this page"><ul><li><a href="#undo-a-recent-action">Undo a recent action</a></li><li><a href="#timeline-and-collection-versions">Timeline and collection versions</a></li><li><a href="#interrupted-operations">Interrupted operations</a></li><li><a href="#what-is-retained">What is retained</a></li><li><a href="#what-recovery-cannot-restore">What recovery cannot restore</a></li></ul></nav></details><h2 id="undo-a-recent-action">Undo a recent action</h2>
+<p>Use the <strong>Undo</strong> action shown after a supported change. This can reverse edits such as moving a space, organising a collection or changing groups. Some browser actions require the relevant tabs/window to still be compatible with the recorded state.</p>
+<p>If newer changes make Undo unsafe, do not repeatedly force the old action. Use Timeline or a collection&#39;s version history to inspect the earlier work.</p>
+<h2 id="timeline-and-collection-versions">Timeline and collection versions</h2>
+<p>Open <strong>Timeline</strong> in the sidebar to find recorded sessions and browsing-work events. Preview the listed pages before restoring.</p>
+<p>A collection&#39;s <strong>Version history</strong> menu shows earlier snapshots. Use <strong>Restore this version</strong> for the snapshot you want. Read the action shown in the dialog: restoring a version and reopening a group of browser tabs are different operations.</p>
+<p>If you need a separate copy rather than changing the current collection, use the recovery option that creates/restores a copy when available. Keep a backup before combining several recovery actions.</p>
+<h2 id="interrupted-operations">Interrupted operations</h2>
+<p>Open <strong>Recovery</strong> to inspect unfinished actions. A restart does not cause LeoTabs to blindly replay an interrupted close against old browser tab IDs.</p>
+<p>For Notion, use the same export job to continue recorded progress. An uncertain remote write may already have succeeded; inspect Notion before starting another export. <a href="../../docs/notion/">Notion recovery</a> explains this in detail.</p>
+<h2 id="what-is-retained">What is retained</h2>
+<p>Completed action records are limited to the most recent 20. Closed-page records are limited to 1,000 entries or 30 days. Timeline/version records are bounded to 200 entries or 30 days during pruning. Unfinished jobs can remain until dealt with.</p>
+<p>These limits are not a permanent archive or an exact deletion timer for an idle browser. Download backups for work you need to keep long-term.</p>
+<p>Deleting a collection can leave earlier recovery copies. Removing optional permissions also does not erase previously stored snapshots. See <a href="../../docs/settings-privacy/">Settings and privacy</a>.</p>
+<h2 id="what-recovery-cannot-restore">What recovery cannot restore</h2>
+<ul>
+<li>Unsaved form input, authentication/login state, or a web application&#39;s in-memory work.</li>
+<li>Remote Notion pages through local Undo.</li>
+<li>Files you deleted outside LeoTabs.</li>
+<li>Local extension data after uninstalling, unless you kept an export or another usable copy.</li>
+<li>Every internal/protected browser page or a tab that changed in a way that makes the recorded operation unsafe.</li>
+</ul>
+<p>When unsure, preserve the current library with a backup before continuing. For a bug report, describe the sequence using sample pages instead of sharing a real browsing backup.</p><nav class="guide-next" aria-label="Related guides"><a href="../../docs/">All guides</a><a href="../../docs/ai/">AI setup</a><a href="../../docs/notion/">Notion setup</a><a href="../../docs/troubleshooting/">Troubleshooting</a></nav></main>
+<footer class="site-foot"><span>Made by Leo · A little more room to think.</span><nav aria-label="Footer"><a href="../../privacy/">Privacy</a><a href="../../permissions/">Permissions</a><a href="../../changelog/">Changelog</a><a href="../../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>
