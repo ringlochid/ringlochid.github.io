@@ -10,7 +10,8 @@
 <main id="main" class="prose"><nav class="guide-breadcrumb" aria-label="Guide"><a href="../../docs/">← All guides</a></nav><h1 id="save-open-and-switch">Save, open and switch</h1>
 <p>Choose an action based on whether you want to keep browsing, put work away, or replace the current window&#39;s task.</p>
 <div class="guide-table"><table><thead><tr><th scope="col">Action</th><th scope="col">Result</th></tr></thead><tbody>
-<tr><td>Save / Stash</td><td>Copy eligible open tabs into a new or existing collection; closing is an option</td></tr>
+<tr><td>Save tabs / Stash tabs</td><td>Create a new collection from eligible open tabs; closing is an option</td></tr>
+<tr><td>Drag into an existing collection</td><td>Save the dragged links in that collection while keeping the browser tabs open</td></tr>
 <tr><td>Open</td><td>Open fresh tabs from a collection without replacing your current work</td></tr>
 <tr><td>Open in new window</td><td>Open the collection in a separate browser window</td></tr>
 <tr><td>Switch</td><td>Make a collection current in this window, with choices for the outgoing work</td></tr>
@@ -18,8 +19,9 @@
 <tr><td>Close all currently open tabs</td><td>Close the current window&#39;s unpinned tabs with recovery information for eligible pages</td></tr>
 </tbody></table></div>
 <details class="on-this-page"><summary>On this page</summary><nav aria-label="On this page"><ul><li><a href="#save-tabs">Save tabs</a></li><li><a href="#open-saved-work">Open saved work</a></li><li><a href="#switch-between-tasks">Switch between tasks</a></li><li><a href="#auto-update">Auto-update</a></li></ul></nav></details><h2 id="save-tabs">Save tabs</h2>
-<p>Use <strong>Save tabs</strong> beside Open tabs or Stash in the switcher. Select tabs first to limit the action, then choose a new collection or an existing destination.</p>
-<p>Review the available options. <strong>Close tabs after saving</strong> puts work away after it is saved. Choosing to switch to the new collection adopts the current window without reopening its tabs; this requires all unpinned tabs in that window. Closing and adopting are mutually exclusive.</p>
+<p>Use <strong>Save tabs</strong>, the tray icon beside <strong>Open tabs</strong>, in the library or switcher. Select tabs first to limit the action. This dialog creates a new collection; it does not have a destination picker.</p>
+<p><strong>and close them</strong> closes the tabs after saving. The confirmation button reads <strong>Stash tabs</strong> when this is checked, or <strong>Save tabs</strong> when it is not. Choosing <strong>Stash tabs</strong> from the search command list opens the dialog with closing selected.</p>
+<p><strong>and switch to new collection</strong> makes the new collection current in this window without reopening its tabs. It requires all unpinned tabs in that window. Closing and switching to the new collection are mutually exclusive.</p>
 <p>Dragging open tabs or an open group into an existing collection saves copies of their links. It does not close the original tabs.</p>
 <p>If AI has been configured with a saved key and access, a new save can receive an automatic descriptive name. Saving does not wait for that result, and a manual rename is respected. <a href="../../docs/ai/">Understand automatic AI naming</a>.</p>
 <h2 id="open-saved-work">Open saved work</h2>
@@ -31,6 +33,7 @@
 <p>Pinned browser tabs stay open. Browser-internal and other extension pages are not saved as ordinary links; new-tab/settings pages may close during a switch. Saving a URL does not capture unsaved form input or a website&#39;s in-memory state.</p>
 <h2 id="auto-update">Auto-update</h2>
 <p>The current collection&#39;s <strong>Auto-update</strong> switch controls whether changes to this window update its saved links and layout. Pause it to keep the saved collection fixed while you browse elsewhere.</p>
+<p>Resuming Auto-update immediately updates the saved collection from the window&#39;s current tabs, then follows later changes. Check the open tabs before resuming. If the same collection is already tracking another window, switch to that window instead of expecting two windows to update it at once.</p>
 <p><strong>Settings → Auto-update all collections</strong> changes this preference globally for existing, open and new collections. Auto-update and <strong>Auto-group new tabs</strong> are independent: one updates saved work, the other organises live tabs.</p>
 <p>Use <a href="../../docs/recovery/">Undo, Timeline and version history</a> if a supported action needs to be reversed.</p><nav class="guide-next" aria-label="Related guides"><a href="../../docs/">All guides</a><a href="../../docs/ai/">AI setup</a><a href="../../docs/notion/">Notion setup</a><a href="../../docs/troubleshooting/">Troubleshooting</a></nav></main>
 <footer class="site-foot"><span>Made by Leo</span><nav aria-label="Footer"><a href="../../privacy/">Privacy</a><a href="../../permissions/">Permissions</a><a href="../../changelog/">Changelog</a><a href="../../LICENSE.txt">MPL-2.0</a><a href="mailto:support@ringlochid.me">Contact</a></nav></footer></div></body></html>

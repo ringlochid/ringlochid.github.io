@@ -17,7 +17,8 @@
 <p>A collection&#39;s <strong>Version history</strong> menu shows earlier snapshots. Use <strong>Restore this version</strong> for the snapshot you want. Read the action shown in the dialog: restoring a version and reopening a group of browser tabs are different operations.</p>
 <p>If you need a separate copy rather than changing the current collection, use the recovery option that creates/restores a copy when available. Keep a backup before combining several recovery actions.</p>
 <h2 id="interrupted-operations">Interrupted operations</h2>
-<p>Open <strong>Recovery</strong> to inspect unfinished actions. A restart does not cause LeoTabs to blindly replay an interrupted close against old browser tab IDs.</p>
+<p>Open search with <strong>Alt+Shift+K</strong>, type <strong>/recovery</strong>, and choose <strong>Recovery</strong> to inspect recorded actions. A restart does not automatically repeat an interrupted close.</p>
+<p><strong>Recover pages</strong> reopens saved pages. <strong>Restore earlier collection… → Restore selected copies</strong> adds separate copies of earlier collections. <strong>Undo action</strong> reverses an operation when that option is available. These are different from <strong>Version history → Restore this version</strong>, which restores the selected collection itself and keeps its previous version in history.</p>
 <p>For Notion, use the same export job to continue recorded progress. An uncertain remote write may already have succeeded; inspect Notion before starting another export. <a href="../../docs/notion/">Notion recovery</a> explains this in detail.</p>
 <h2 id="what-is-retained">What is retained</h2>
 <p>Completed action records are limited to the most recent 20. Closed-page records are limited to 1,000 entries or 30 days. Timeline/version records are bounded to 200 entries or 30 days during pruning. Unfinished jobs can remain until dealt with.</p>
