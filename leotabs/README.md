@@ -11,7 +11,7 @@ The Chrome Web Store release is in preparation. The extension source repository 
 
 ## Website files
 
-This is a ready-to-serve static website. Preview it with any local static web server. It uses local assets and a small script to remember the visitor's colour theme. No build tools, remote fonts, analytics or embeds are needed.
+This is a ready-to-serve static website. Preview it with any local static web server. It uses local assets and scripts for the visitor's colour theme and an optional video dialog. Watch video loads the YouTube privacy-enhanced player only after a click; closing it removes the player. Without JavaScript, the button is a regular YouTube link. No build tools, remote fonts or developer-operated analytics are needed.
 
 The site is published under `leotabs/` in the domain's `ringlochid.github.io` repository to retain the address above. That repository runs the GitHub Pages deployment. Website updates must be copied there after they have been reviewed here. Keep the domain's other pages and configuration unchanged.
 
