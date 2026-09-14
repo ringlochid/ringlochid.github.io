@@ -1,1 +1,2 @@
 Sitemap: https://ringlochid.me/leotabs/sitemap.xml
+Sitemap: https://ringlochid.me/imagesage/sitemap.xml
